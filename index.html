@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modovip - Passengers Transportation</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #lang-toggle[aria-pressed="true"] .lang-en {
+            font-weight: 700;
+            color: #1d4ed8;
+            /* blue-700 */
+        }
+
+        #lang-toggle[aria-pressed="false"] .lang-pt {
+            font-weight: 700;
+            color: #1d4ed8;
+            /* blue-700 */
+        }
+
+        .raleway-h1 {
+            font-family: 'Raleway', sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200vw;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+            <img src="./assets/favicon.png" alt="Modovip Logo" class="h-10 w-auto">
+            <h1 class="text-3xl font-bold text-gray-900 raleway-h1">Modovip</h1>
+            </div>
+            <button id="hamburger-btn" class="sm:hidden text-gray-700 hover:text-blue-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <nav id="nav-menu"
+                class="hidden sm:flex flex-col sm:flex-row items-center absolute sm:relative top-16 sm:top-auto left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-md sm:shadow-none p-4 sm:p-0"
+                aria-label="Main Navigation"> <!-- Nav buttons têm data-target; o script escolhe a secção visível -->
+                <button
+                    class="nav-btn text-lg text-gray-700 hover:text-blue-600 mx-2 sm:mx-4 transition-colors duration-300"
+                    data-target="services" aria-label="Services">Serviços</button>
+                <button
+                    class="nav-btn text-lg text-gray-700 hover:text-blue-600 mx-2 sm:mx-4 transition-colors duration-300"
+                    data-target="fleet" aria-label="Fleet">Frota</button>
+                <button
+                    class="nav-btn text-lg text-gray-700 hover:text-blue-600 mx-2 sm:mx-4 transition-colors duration-300"
+                    data-target="contact" aria-label="Contact">Contacto</button>
+
+                <!-- Language toggle na navbar -->
+                <button id="lang-toggle" aria-label="Mudar idioma" aria-pressed="true"
+                    class="text-lg text-gray-700 mx-2 sm:mx-4 transition-colors duration-300">
+                    <span class="lang-en">EN</span><span class="sep">/</span><span class="lang-pt">PT</span>
+                </button>
+            </nav>
+
+
+        </div>
+
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- English Section -->
+        <section id="en-section" class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">Your Journey, Our Priority</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Discover Modovip, where comfort, elegance, and
+                    reliability meet. We offer a premium transport experience tailored to your needs.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="services">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">Our Services</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
+                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Airport Transfers</h4>
+                        <p class="text-gray-700">Punctual and comfortable rides to and from airports.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
+                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Corporate Travel</h4>
+                        <p class="text-gray-700">Professional and discreet transport for business meetings and events.
+                        </p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
+                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Events & Tours</h4>
+                        <p class="text-gray-700">Elegant and reliable transport for special occasions and sightseeing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="fleet">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">Our Fleet</h3>
+                <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-8">
+                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Xpeng+G9" alt="Xpeng G9"
+                        class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-gray-900 mb-2">Xpeng G9</h4>
+                        <p class="text-gray-700">Experience the future of electric mobility. With its spacious interior,
+                            advanced technology, and exceptionally smooth ride, the G9 offers unparalleled comfort for
+                            up to four passengers.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8">
+                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Tesla+Y" alt="Tesla Model Y"
+                        class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-gray-900 mb-2">Tesla Model Y</h4>
+                        <p class="text-gray-700">Enjoy a sporty yet elegant journey. The Model Y is known for its
+                            impressive performance, expansive panoramic roof, and minimalist design, providing a
+                            seamless and exhilarating travel experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl text-center" data-anchor="contact">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">Contact Us</h3>
+                <p class="text-gray-700 mb-4">For reservations and more information, please contact us.</p>
+                <div class="flex flex-col items-center">
+                    <p class="text-2xl font-semibold text-blue-600 mb-2">Phone: <a href="tel:+351916858883"
+                            class="hover:underline transition-colors duration-300">916 858 883</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portuguese Section -->
+        <section id="pt-section" class="mb-16 hidden">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">A Sua Viagem, a Nossa Prioridade</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Descubra a Modovip, onde conforto, elegância e
+                    fiabilidade se encontram. Oferecemos uma experiência de transporte premium adaptada às suas
+                    necessidades.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="services">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">Os Nossos Serviços
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
+                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Transferes para Aeroporto</h4>
+                        <p class="text-gray-700">Viagens pontuais e confortáveis de e para aeroportos.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
+                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Viagens Corporativas</h4>
+                        <p class="text-gray-700">Transporte profissional e discreto para reuniões e eventos de negócios.
+                        </p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
+                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Eventos & Passeios</h4>
+                        <p class="text-gray-700">Transporte elegante e fiável para ocasiões especiais e passeios
+                            turísticos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="fleet">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">A Nossa Frota</h3>
+                <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-8">
+                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Xpeng+G9" alt="Xpeng G9"
+                        class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-gray-900 mb-2">Xpeng G9</h4>
+                        <p class="text-gray-700">Experimente o futuro da mobilidade elétrica. Com o seu interior
+                            espaçoso, tecnologia avançada e uma viagem excecionalmente suave, o G9 oferece um conforto
+                            inigualável para até quatro passageiros.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8">
+                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Tesla+Y" alt="Tesla Model Y"
+                        class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-gray-900 mb-2">Tesla Model Y</h4>
+                        <p class="text-gray-700">Desfrute de uma viagem desportiva e elegante. O Model Y é conhecido
+                            pelo seu desempenho impressionante, teto panorâmico expansivo e design minimalista,
+                            proporcionando uma experiência de viagem emocionante e sem interrupções.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl text-center" data-anchor="contact">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">Contacte-nos</h3>
+                <p class="text-gray-700 mb-4">Para orçamentos, reservas ou mais informações, por favor, entre em
+                    contacto connosco.</p>
+                <div class="flex flex-col items-center">
+                    <p class="text-2xl font-semibold text-blue-600 mb-2">Telemóvel: <a href="tel:+351916858883"
+                            class="hover:underline transition-colors duration-300">916 858 883</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langToggle = document.getElementById('lang-toggle');
+            const enSection = document.getElementById('en-section');
+            const ptSection = document.getElementById('pt-section');
+            const navBtns = document.querySelectorAll('.nav-btn');
+
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const navMenu = document.getElementById('nav-menu');
+
+            hamburgerBtn.addEventListener('click', () => {
+                // Alterna a classe 'hidden' no menu de navegação
+                navMenu.classList.toggle('hidden');
+            });
+
+            const NAV_LABELS = {
+                en: { services: 'Services', fleet: 'Fleet', contact: 'Contact' },
+                pt: { services: 'Serviços', fleet: 'Frota', contact: 'Contacto' }
+            };
+
+
+            const savedLang = localStorage.getItem('siteLang');
+            let currentLang = savedLang ? savedLang : 'en';
+
+
+            function applyLanguage(lang, save = false) {
+                currentLang = lang;
+
+                if (lang === 'en') {
+                    enSection.classList.remove('hidden');
+                    ptSection.classList.add('hidden');
+                } else {
+                    enSection.classList.add('hidden');
+                    ptSection.classList.remove('hidden');
+                }
+
+                // switch of nav buttons language
+                navBtns.forEach(btn => {
+                    const target = btn.getAttribute('data-target');
+                    if (!target) return;
+                    if (lang === 'en') {
+                        btn.textContent = NAV_LABELS.en[target] || btn.textContent;
+                        btn.setAttribute('aria-label', NAV_LABELS.en[target] || '');
+                    } else {
+                        btn.textContent = NAV_LABELS.pt[target] || btn.textContent;
+                        btn.setAttribute('aria-label', NAV_LABELS.pt[target] || '');
+                    }
+                });
+
+                // actualiza estado do botão toggle (apenas aria e título, mantendo "EN / PT" como texto)
+                if (lang === 'en') {
+                    langToggle.setAttribute('aria-pressed', 'true');
+                    langToggle.title = 'Current: EN — click to switch to PT';
+                } else {
+                    langToggle.setAttribute('aria-pressed', 'false');
+                    langToggle.title = 'Current: PT — click to switch to EN';
+                }
+
+                if (save) {
+                    localStorage.setItem('siteLang', lang);
+                }
+            }
+
+            // toggle handler (mantém formato único "EN / PT")
+            langToggle.addEventListener('click', () => {
+                const next = currentLang === 'en' ? 'pt' : 'en';
+                applyLanguage(next, true);
+            });
+
+            // Smooth scroll para meio do ecrã na secção visível
+            function scrollToAnchorInVisibleSection(anchorName) {
+                const visibleSection = enSection.classList.contains('hidden') ? ptSection : enSection;
+                const target = visibleSection.querySelector('[data-anchor="' + anchorName + '"]');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+
+            // Attach click handlers to nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const target = btn.getAttribute('data-target');
+                    if (target) {
+                        scrollToAnchorInVisibleSection(target);
+                    }
+                    if (window.innerWidth < 640 && !navMenu.classList.contains('hidden')) {
+                        navMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // se houver hash na URL (ex: /#fleet), tenta rolar para a secção correcta depois de init
+            if (location.hash) {
+                const anchorFromHash = location.hash.replace('#', '');
+                setTimeout(() => {
+                    scrollToAnchorInVisibleSection(anchorFromHash);
+                }, 150);
+            }
+
+            // inicializa idioma
+            applyLanguage(currentLang, false);
+        });
+    </script>
+    </script>
+
+</body>
+
+</html>
