@@ -228,18 +228,18 @@
                 <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-bronze pb-2">Os Nossos Serviços
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-                    <button command="show-modal" commandfor="dialog" data-service="airport"
+                    <button command="show-modal" commandfor="dialog" data-service="aeroporto"
                         class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
                         <h4 class="text-2xl font-semibold text-bronze mb-2">Transferes para Aeroporto</h4>
                         <p class="text-gray-700">Viagens pontuais e confortáveis de e para aeroportos.</p>
                     </button>
-                    <button command="show-modal" commandfor="dialog" data-service="corporate"
+                    <button command="show-modal" commandfor="dialog" data-service="corporativa"
                         class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
                         <h4 class="text-2xl font-semibold text-bronze mb-2">Viagens Corporativas</h4>
                         <p class="text-gray-700">Transporte profissional e discreto para reuniões e eventos de negócios.
                         </p>
                     </button>
-                    <button command="show-modal" commandfor="dialog" data-service="events"
+                    <button command="show-modal" commandfor="dialog" data-service="eventos"
                         class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
                         <h4 class="text-2xl font-semibold text-bronze mb-2">Eventos & Passeios</h4>
                         <p class="text-gray-700">Transporte elegante e fiável para ocasiões especiais e passeios
@@ -340,39 +340,29 @@
                             <!-- Título e botão fechar -->
                             <div class="px-4 pt-2 sm:flex sm:flex-row-reverse sm:items-start sm:justify-between">
                                 <button type="button" command="close" commandfor="dialog"
-                                    class="inline-flex px-2 py-1 text-md font-semibold text-bronze shadow-xs hover:scale-105 cursor-pointer sm:ml-3 sm:w-auto">
+                                    class="inline-flex px-2 py-1 text-md font-semibold text-bronze shadow-xs hover:scale-105 cursor-pointer sm:ml-3 sm:w-auto"
+                                    aria-label="Close">
                                     X
                                 </button>
-
                             </div>
 
                             <div class="flex flex-col md:flex-row py-3 px-3 gap-6">
-
-                                <!-- Imagem alinhada verticalmente ao centro -->
                                 <div class="flex-shrink-0 md:w-[30%] flex items-center">
-                                    <img src="dialog-img" alt="Image" class="w-full h-auto rounded-lg">
+                                    <img src="" alt="Image" class="w-full h-auto rounded-lg">
                                 </div>
 
-                                <!-- Texto + título -->
                                 <div class="flex-1 flex flex-col justify-center">
                                     <h4 id="dialog-title"
                                         class="text-2xl font-semibold text-bronze border-b-2 border-bronze inline-block pb-1">
                                     </h4>
 
-                                    <div class="mt-2">
-                                        <p id="p1" class="text-gray-700 text-sm md:text-base"></p>
-                                        <p id="p2" class="text-gray-700 text-sm md:text-base"></p>
-                                        <p id="p3" class="text-gray-700 text-sm md:text-base"></p>
-                                        <p id="p4" class="text-gray-700 text-sm md:text-base"></p>
-                                        <p id="p5" class="text-gray-700 text-sm md:text-base"></p>
-                                        <p id="p6" class="text-gray-700 text-sm md:text-base"></p>
+                                    <div class="mt-2 p-2">
+                                        <span id="p1" class="text-gray-700 text-sm md:text-base"></span>
+                                        <span id="p2" class="text-gray-700 font-semibold text-sm md:text-base"></span>
+                                        <p id="p7" class="text-bronze font-semibold text-sm md:text-base"></p>
                                     </div>
                                 </div>
-
-
                             </div>
-
-
                         </el-dialog-panel>
                     </div>
                 </dialog>
@@ -487,64 +477,105 @@
             applyLanguage(currentLang, false);
 
             const modalContents = {
-                airport: {
+                aeroporto: {
                     title: "Transferes para Aeroporto",
                     text1: "Aeroporto de Lisboa para qualquer ponto do país.",
                     img: "./assets/services/airport.png"
                 },
-                corporate: {
+                corporativa: {
                     title: "Viagens Corporativas",
                     text1: "Viagens particulares de curta e longa distância.",
                     text2: "Com foco na pegada ecológica apenas trabalhamos com carros elétricos.",
                     img: "./assets/services/corporate.png"
 
                 },
-                events: {
+                eventos: {
                     title: "Eventos & Passeios",
-                    text1: "Diga-nos onde quer ir.... Faça o seu próprio percurso.",
-                    text2: "Alcobaça - Batalha - Fátima ",
-                    text3: "Óbidos - Budha Eden",
-                    text4: "Fátima - Grutas - Salinas",
-                    text5: "Óbidos - Nazaré - São Martinho do Porto",
-                    text6: "Lisboa · Porto · Sintra · Aveiro",
+                    text1: "Diga-nos onde quer ir.... ",
+                    text2: "Faça o seu próprio percurso.",
+                    text3: "Alcobaça - Batalha - Fátima ",
+                    text4: "Óbidos - Budha Eden",
+                    text5: "Fátima - Grutas - Salinas",
+                    text6: "Óbidos - Nazaré - São Martinho do Porto",
+                    text7: "Lisboa · Porto · Sintra · Aveiro",
+                    img: "./assets/services/tours.png"
+                },
+                // English version
+                airport: {
+                    title: "Airport Transfers",
+                    text1: "From Lisbon Airport to any point in the country.",
+                    img: "./assets/services/airport.png"
+                },
+                corporate: {
+                    title: "Corporate Travel",
+                    text1: "Private trips for short and long distances.",
+                    text2: "Focusing on the ecological footprint, we only work with electric cars.",
+                    img: "./assets/services/corporate.png"
+
+                },
+                events: {
+                    title: "Events & Tours",
+                    text1: "Tell us where you want to go.... ",
+                    text2: "Make your own route.",
+                    text3: "Alcobaça - Batalha - Fátima ",
+                    text4: "Óbidos - Budha Eden",
+                    text5: "Fátima - Grutas - Salinas",
+                    text6: "Óbidos - Nazaré - São Martinho do Porto",
+                    text7: "Lisboa · Porto · Sintra · Aveiro",
                     img: "./assets/services/tours.png"
                 },
             };
 
-            document.querySelectorAll('[command="show-modal"]').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const service = btn.getAttribute('data-service');
-                    const modal = document.getElementById('dialog');
+            document.body.addEventListener('click', (e) => {
+                const btn = e.target.closest('[command="show-modal"]');
+                if (!btn) return;
 
-                    if (modalContents[service]) {
-                        // Atualiza título e texto
-                        document.getElementById('dialog-title').textContent = modalContents[service].title;
-                        document.getElementById('p1').textContent = modalContents[service].text1;
-                        document.getElementById('p2').textContent = modalContents[service].text2;
-                        document.getElementById('p3').textContent = modalContents[service].text3;
-                        document.getElementById('p4').textContent = modalContents[service].text4;
-                        document.getElementById('p5').textContent = modalContents[service].text5;
-                        document.getElementById('p6').textContent = modalContents[service].text6;
-                        // Atualiza imagem se existir
-                        if (modalContents[service].img) {
-                            document.querySelector('#dialog img').src = modalContents[service].img;
-                        }
+                const service = btn.getAttribute('data-service');
+                const modal = document.getElementById('dialog');
 
+                if (modalContents[service]) {
+                    // Atualiza título e texto
+                    document.getElementById('dialog-title').textContent = modalContents[service].title || "";
+                    document.getElementById('p1').textContent = modalContents[service].text1 || "";
+                    document.getElementById('p2').textContent = modalContents[service].text2 || "";
+                    document.getElementById('p7').textContent = modalContents[service].text7 || "";
+
+                    // Atualiza imagem
+                    if (modalContents[service].img) {
+                        const imgEl = document.querySelector('#dialog img');
+                        imgEl.src = modalContents[service].img;
                     }
 
-                    modal.showModal(); // abre o modal
-                });
+                    // Lista bullet
+                    const contentBox = document.querySelector("#dialog .mt-2.p-2");
+                    const oldList = document.getElementById("bullet-list");
+                    if (oldList) oldList.remove();
+
+                    if (service === "events" || service === "eventos") {
+                        const ul = document.createElement("ul");
+                        ul.id = "bullet-list";
+                        ul.className = "list-disc pl-5 text-gray-700 text-sm md:text-base";
+                        ["text3", "text4", "text5", "text6"].forEach(key => {
+                            if (modalContents[service][key]) {
+                                const li = document.createElement("li");
+                                li.textContent = modalContents[service][key];
+                                ul.appendChild(li);
+                            }
+                        });
+                        contentBox.appendChild(ul);
+                    }
+                }
             });
 
-            // Fecha o modal
-            document.querySelectorAll('[command="close"]').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const modal = document.getElementById('dialog');
-                    modal.close();
-                });
+
+        });
+
+        // Fecha o modal
+        document.querySelectorAll('[command="close"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modal = document.getElementById('dialog');
+                modal.close();
             });
-
-
         });
     </script>
 </body>
