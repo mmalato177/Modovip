@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modovip - Passengers Transportation</title>
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/logo/favicon2.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <script> tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bronze: "#846f42",
+                    },
+                },
+            },
+        };
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
@@ -26,14 +38,14 @@
 
         #lang-toggle[aria-pressed="true"] .lang-en {
             font-weight: 700;
-            color: #1d4ed8;
-            /* blue-700 */
+            color: #846f42;
+
         }
 
         #lang-toggle[aria-pressed="false"] .lang-pt {
             font-weight: 700;
-            color: #1d4ed8;
-            /* blue-700 */
+            color: #846f42;
+
         }
 
         .raleway-h1 {
@@ -42,18 +54,24 @@
             font-weight: 200vw;
             font-style: normal;
         }
+
+        img {
+            -webkit-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
     </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800">
 
     <header class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="container mx-auto px-2 py-2 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-            <img src="./assets/favicon.png" alt="Modovip Logo" class="h-10 w-auto">
-            <h1 class="text-3xl font-bold text-gray-900 raleway-h1">Modovip</h1>
+                <img src="./assets/logo/favicon.png" alt="Modovip Logo" class="h-auto w-16">
+                <h1 class="text-3xl font-bold text-gray-900 raleway-h1">MODO<span class="text-bronze">VIP</span></h1>
             </div>
-            <button id="hamburger-btn" class="sm:hidden text-gray-700 hover:text-blue-600 focus:outline-none">
+            <button id="hamburger-btn" class="sm:hidden text-gray-700 hover:text-bronze focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
@@ -65,13 +83,13 @@
                 class="hidden sm:flex flex-col sm:flex-row items-center absolute sm:relative top-16 sm:top-auto left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-md sm:shadow-none p-4 sm:p-0"
                 aria-label="Main Navigation"> <!-- Nav buttons têm data-target; o script escolhe a secção visível -->
                 <button
-                    class="nav-btn text-lg text-gray-700 hover:text-blue-600 mx-2 sm:mx-4 transition-colors duration-300"
+                    class="nav-btn text-lg text-gray-700 hover:text-bronze mx-2 sm:mx-4 transition-colors duration-300"
                     data-target="services" aria-label="Services">Serviços</button>
                 <button
-                    class="nav-btn text-lg text-gray-700 hover:text-blue-600 mx-2 sm:mx-4 transition-colors duration-300"
+                    class="nav-btn text-lg text-gray-700 hover:text-bronze mx-2 sm:mx-4 transition-colors duration-300"
                     data-target="fleet" aria-label="Fleet">Frota</button>
                 <button
-                    class="nav-btn text-lg text-gray-700 hover:text-blue-600 mx-2 sm:mx-4 transition-colors duration-300"
+                    class="nav-btn text-lg text-gray-700 hover:text-bronze mx-2 sm:mx-4 transition-colors duration-300"
                     data-target="contact" aria-label="Contact">Contacto</button>
 
                 <!-- Language toggle na navbar -->
@@ -97,29 +115,32 @@
             </div>
 
             <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="services">
-                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">Our Services</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-bronze pb-2">Our Services</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
-                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Airport Transfers</h4>
+                    <button command="show-modal" commandfor="dialog" data-service="airport"
+                        class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
+                        <h4 class="text-2xl font-semibold text-bronze mb-2">Airport Transfers</h4>
                         <p class="text-gray-700">Punctual and comfortable rides to and from airports.</p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
-                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Corporate Travel</h4>
+                    </button>
+                    <button command="show-modal" commandfor="dialog" data-service="corporate"
+                        class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
+                        <h4 class="text-2xl font-semibold text-bronze mb-2">Corporate Travel</h4>
                         <p class="text-gray-700">Professional and discreet transport for business meetings and events.
                         </p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
-                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Events & Tours</h4>
+                    </button>
+                    <button command="show-modal" commandfor="dialog" data-service="events"
+                        class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
+                        <h4 class="text-2xl font-semibold text-bronze mb-2">Events & Tours</h4>
                         <p class="text-gray-700">Elegant and reliable transport for special occasions and sightseeing.
                         </p>
-                    </div>
+                    </button>
                 </div>
             </div>
 
             <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="fleet">
-                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">Our Fleet</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-bronze pb-2">Our Fleet</h3>
                 <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-8">
-                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Xpeng+G9" alt="Xpeng G9"
+                    <img src="./assets/fleet/xpeng.png" alt="Xpeng G9"
                         class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
                     <div>
                         <h4 class="text-2xl font-semibold text-gray-900 mb-2">Xpeng G9</h4>
@@ -129,7 +150,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8">
-                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Tesla+Y" alt="Tesla Model Y"
+                    <img src="./assets/fleet/tesla.png" alt="Tesla Model Y"
                         class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
                     <div>
                         <h4 class="text-2xl font-semibold text-gray-900 mb-2">Tesla Model Y</h4>
@@ -140,12 +161,56 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl text-center" data-anchor="contact">
-                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">Contact Us</h3>
-                <p class="text-gray-700 mb-4">For reservations and more information, please contact us.</p>
-                <div class="flex flex-col items-center">
-                    <p class="text-2xl font-semibold text-blue-600 mb-2">Phone: <a href="tel:+351916858883"
-                            class="hover:underline transition-colors duration-300">916 858 883</a></p>
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl" data-anchor="contact">
+                <div class="flex flex-col md:flex-row items-start gap-10">
+
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 md:w-auto">
+                        <img src="./assets/logo/info.png" alt="Modovip Logo"
+                            class="w-48 md:w-56 h-auto mx-auto md:mx-0">
+                    </div>
+
+                    <!--Info-->
+                    <div class="flex-1 text-left">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4 border-b-2 border-bronze inline-block w-full">
+                            Contact Us
+                        </h3>
+                        <p class="text-gray-700 mb-8">
+                            For reservations and more information, please contact us.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row sm:flex-wrap items-start gap-6 w-full">
+                            <!-- Phone -->
+                            <div
+                                class="flex items-center gap-3 bg-gray-50 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition">
+                                <img src="./assets/icons/phone.png" alt="Phone Icon" class="h-6 w-6 text-bronze">
+                                <a href="tel:+351916858883" class="text-lg font-semibold text-gray-900 hover:underline">
+                                    +351 916 858 883
+                                </a>
+                            </div>
+
+                            <!-- Email -->
+                            <div
+                                class="flex items-center gap-3 bg-gray-50 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition">
+                                <img src="./assets/icons/email.png" alt="Email Icon" class="h-6 w-6 text-bronze">
+                                <a href="mailto:modoviplda@gmail.com"
+                                    class="text-lg font-semibold text-gray-900 hover:underline">
+                                    modoviplda@gmail.com
+                                </a>
+                            </div>
+
+                            <!-- Address -->
+                            <div
+                                class="flex items-center gap-3 bg-gray-50 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition max-w-full">
+                                <img src="./assets/icons/pin.png" alt="Location Icon" class="h-6 w-6 text-bronze">
+                                <a href="https://www.google.com/maps/place/Modovip+lda/..." target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-lg font-semibold text-gray-900 break-words hover:underline">
+                                    R. Principal 10-A Gaio, Vimeiro, Alcobaça Portugal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -160,30 +225,33 @@
             </div>
 
             <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="services">
-                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">Os Nossos Serviços
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-bronze pb-2">Os Nossos Serviços
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
-                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Transferes para Aeroporto</h4>
+                    <button command="show-modal" commandfor="dialog" data-service="airport"
+                        class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
+                        <h4 class="text-2xl font-semibold text-bronze mb-2">Transferes para Aeroporto</h4>
                         <p class="text-gray-700">Viagens pontuais e confortáveis de e para aeroportos.</p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
-                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Viagens Corporativas</h4>
+                    </button>
+                    <button command="show-modal" commandfor="dialog" data-service="corporate"
+                        class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
+                        <h4 class="text-2xl font-semibold text-bronze mb-2">Viagens Corporativas</h4>
                         <p class="text-gray-700">Transporte profissional e discreto para reuniões e eventos de negócios.
                         </p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105">
-                        <h4 class="text-2xl font-semibold text-blue-600 mb-2">Eventos & Passeios</h4>
+                    </button>
+                    <button command="show-modal" commandfor="dialog" data-service="events"
+                        class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
+                        <h4 class="text-2xl font-semibold text-bronze mb-2">Eventos & Passeios</h4>
                         <p class="text-gray-700">Transporte elegante e fiável para ocasiões especiais e passeios
                             turísticos.</p>
-                    </div>
+                    </button>
                 </div>
             </div>
 
             <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="fleet">
-                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">A Nossa Frota</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-bronze pb-2">A Nossa Frota</h3>
                 <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-8">
-                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Xpeng+G9" alt="Xpeng G9"
+                    <img src="./assets/fleet/xpeng.png" alt="Xpeng G9"
                         class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
                     <div>
                         <h4 class="text-2xl font-semibold text-gray-900 mb-2">Xpeng G9</h4>
@@ -193,7 +261,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8">
-                    <img src="https://placehold.co/600x400/1f2937/d1d5db?text=Tesla+Y" alt="Tesla Model Y"
+                    <img src="./assets/fleet/tesla.png" alt="Tesla Model Y"
                         class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
                     <div>
                         <h4 class="text-2xl font-semibold text-gray-900 mb-2">Tesla Model Y</h4>
@@ -204,15 +272,113 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl text-center" data-anchor="contact">
-                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">Contacte-nos</h3>
-                <p class="text-gray-700 mb-4">Para orçamentos, reservas ou mais informações, por favor, entre em
-                    contacto connosco.</p>
-                <div class="flex flex-col items-center">
-                    <p class="text-2xl font-semibold text-blue-600 mb-2">Telemóvel: <a href="tel:+351916858883"
-                            class="hover:underline transition-colors duration-300">916 858 883</a></p>
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl" data-anchor="contact">
+                <div class="flex flex-col md:flex-row items-start gap-10">
+
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 md:w-auto">
+                        <img src="./assets/logo/info.png" alt="Modovip Logo"
+                            class="w-48 md:w-56 h-auto mx-auto md:mx-0">
+                    </div>
+
+                    <!--Info-->
+                    <div class="flex-1 text-left">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4 border-b-2 border-bronze inline-block w-full">
+                            Contacte-nos
+                        </h3>
+                        <p class="text-gray-700 mb-8">
+                            Para orçamentos, reservas ou mais informações, por favor, entre em
+                            contacto connosco.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row sm:flex-wrap items-start gap-6 w-full">
+                            <!-- Phone -->
+                            <div
+                                class="flex items-center gap-3 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition">
+                                <img src="./assets/icons/phone.png" alt="Phone Icon" class="h-6 w-6 text-bronze">
+                                <a href="tel:+351916858883" class="text-lg font-semibold text-gray-900 hover:underline">
+                                    +351 916 858 883
+                                </a>
+                            </div>
+
+                            <!-- Email -->
+                            <div
+                                class="flex items-center gap-3 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition">
+                                <img src="./assets/icons/email.png" alt="Email Icon" class="h-6 w-6 text-bronze">
+                                <a href="mailto:modoviplda@gmail.com"
+                                    class="text-lg font-semibold text-gray-900 hover:underline">
+                                    modoviplda@gmail.com
+                                </a>
+                            </div>
+
+                            <!-- Address -->
+                            <div
+                                class="flex items-center gap-3 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition max-w-full">
+                                <img src="./assets/icons/pin.png" alt="Location Icon" class="h-6 w-6 text-bronze">
+                                <a href="https://www.google.com/maps/place/Modovip+lda/..." target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-lg font-semibold text-gray-900 break-words hover:underline">
+                                    R. Principal 10-A Gaio, Vimeiro, Alcobaça Portugal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <el-dialog>
+                <dialog id="dialog" aria-labelledby="dialog-title"
+                    class="fixed inset-0 overflow-y-auto bg-transparent backdrop:bg-transparent">
+                    <el-dialog-backdrop
+                        class="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0"></el-dialog-backdrop>
+
+                    <div tabindex="0"
+                        class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                        <el-dialog-panel class="relative transform overflow-auto rounded-lg bg-white text-left shadow-xl transition-all
+                 sm:my-8 sm:w-full sm:max-w-5xl sm:max-h-[90vh] data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+
+                            <!-- Título e botão fechar -->
+                            <div class="px-4 pt-2 sm:flex sm:flex-row-reverse sm:items-start sm:justify-between">
+                                <button type="button" command="close" commandfor="dialog"
+                                    class="inline-flex px-2 py-1 text-md font-semibold text-bronze shadow-xs hover:scale-105 cursor-pointer sm:ml-3 sm:w-auto">
+                                    X
+                                </button>
+
+                            </div>
+
+                            <div class="flex flex-col md:flex-row py-3 px-3 gap-6">
+
+                                <!-- Imagem alinhada verticalmente ao centro -->
+                                <div class="flex-shrink-0 md:w-[30%] flex items-center">
+                                    <img src="dialog-img" alt="Image" class="w-full h-auto rounded-lg">
+                                </div>
+
+                                <!-- Texto + título -->
+                                <div class="flex-1 flex flex-col justify-center">
+                                    <h4 id="dialog-title"
+                                        class="text-2xl font-semibold text-bronze border-b-2 border-bronze inline-block pb-1">
+                                    </h4>
+
+                                    <div class="mt-2">
+                                        <p id="p1" class="text-gray-700 text-sm md:text-base"></p>
+                                        <p id="p2" class="text-gray-700 text-sm md:text-base"></p>
+                                        <p id="p3" class="text-gray-700 text-sm md:text-base"></p>
+                                        <p id="p4" class="text-gray-700 text-sm md:text-base"></p>
+                                        <p id="p5" class="text-gray-700 text-sm md:text-base"></p>
+                                        <p id="p6" class="text-gray-700 text-sm md:text-base"></p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </el-dialog-panel>
+                    </div>
+                </dialog>
+            </el-dialog>
+
+
         </section>
     </main>
 
@@ -319,10 +485,68 @@
 
             // inicializa idioma
             applyLanguage(currentLang, false);
+
+            const modalContents = {
+                airport: {
+                    title: "Transferes para Aeroporto",
+                    text1: "Aeroporto de Lisboa para qualquer ponto do país.",
+                    img: "./assets/services/airport.png"
+                },
+                corporate: {
+                    title: "Viagens Corporativas",
+                    text1: "Viagens particulares de curta e longa distância.",
+                    text2: "Com foco na pegada ecológica apenas trabalhamos com carros elétricos.",
+                    img: "./assets/services/corporate.png"
+
+                },
+                events: {
+                    title: "Eventos & Passeios",
+                    text1: "Diga-nos onde quer ir.... Faça o seu próprio percurso.",
+                    text2: "Alcobaça - Batalha - Fátima ",
+                    text3: "Óbidos - Budha Eden",
+                    text4: "Fátima - Grutas - Salinas",
+                    text5: "Óbidos - Nazaré - São Martinho do Porto",
+                    text6: "Lisboa · Porto · Sintra · Aveiro",
+                    img: "./assets/services/tours.png"
+                },
+            };
+
+            document.querySelectorAll('[command="show-modal"]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const service = btn.getAttribute('data-service');
+                    const modal = document.getElementById('dialog');
+
+                    if (modalContents[service]) {
+                        // Atualiza título e texto
+                        document.getElementById('dialog-title').textContent = modalContents[service].title;
+                        document.getElementById('p1').textContent = modalContents[service].text1;
+                        document.getElementById('p2').textContent = modalContents[service].text2;
+                        document.getElementById('p3').textContent = modalContents[service].text3;
+                        document.getElementById('p4').textContent = modalContents[service].text4;
+                        document.getElementById('p5').textContent = modalContents[service].text5;
+                        document.getElementById('p6').textContent = modalContents[service].text6;
+                        // Atualiza imagem se existir
+                        if (modalContents[service].img) {
+                            document.querySelector('#dialog img').src = modalContents[service].img;
+                        }
+
+                    }
+
+                    modal.showModal(); // abre o modal
+                });
+            });
+
+            // Fecha o modal
+            document.querySelectorAll('[command="close"]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const modal = document.getElementById('dialog');
+                    modal.close();
+                });
+            });
+
+
         });
     </script>
-    </script>
-
 </body>
 
 </html>
