@@ -416,7 +416,6 @@
                 </div>
             </dialog>
         </el-dialog>
-
     </main>
 
     <script>
@@ -590,6 +589,7 @@
                     document.getElementById('p2').textContent = modalContents[service].text2 || "";
                     document.getElementById('p7').textContent = modalContents[service].text7 || "";
 
+                    // Imagem com spinner
                     const wrapper = document.querySelector('#dialog .img-wrapper');
                     const imgEl = wrapper.querySelector('img');
                     const spinner = wrapper.querySelector('.spinner');
@@ -598,7 +598,7 @@
                     imgEl.style.display = 'none';
                     spinner.style.display = 'block';
 
-                    // Preload
+                    // Preload / cache automático
                     const tmpImg = new Image();
                     tmpImg.src = modalContents[service].img;
                     tmpImg.onload = () => {
