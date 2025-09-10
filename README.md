@@ -8,8 +8,8 @@ Modovip é uma plataforma de transporte de passageiros premium, oferecendo exper
 
 - Design responsivo e moderno, baseado em **Tailwind CSS**.  
 - Navegação intuitiva para seções específicas.   
-- Seção de frota mostrando os veículos com descrição detalhada.  
-- Seção de contacto com telefone, email e endereço integrado ao Google Maps.  
+- Secção de frota mostrando os veículos com descrição detalhada.  
+- Secção de contacto com telefone, email e endereço integrado ao Google Maps.  
 
 ---
 
