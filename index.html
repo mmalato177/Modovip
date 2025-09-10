@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -81,7 +80,7 @@
 
             <nav id="nav-menu"
                 class="hidden sm:flex flex-col sm:flex-row items-center absolute sm:relative top-16 sm:top-auto left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-md sm:shadow-none p-4 sm:p-0"
-                aria-label="Main Navigation"> <!-- Nav buttons têm data-target; o script escolhe a secção visível -->
+                aria-label="Main Navigation">
                 <button
                     class="nav-btn text-lg text-gray-700 hover:text-bronze mx-2 sm:mx-4 transition-colors duration-300"
                     data-target="services" aria-label="Services">Serviços</button>
@@ -98,15 +97,11 @@
                     <span class="lang-en">EN</span><span class="sep">/</span><span class="lang-pt">PT</span>
                 </button>
             </nav>
-
-
         </div>
-
     </header>
 
     <main class="container mx-auto px-4 py-8">
-
-        <!-- English Section -->
+        <!-- *************** English Section ****************-->
         <section id="en-section" class="mb-16">
             <div class="text-center mb-12">
                 <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">Your Journey, Our Priority</h2>
@@ -163,13 +158,11 @@
 
             <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl" data-anchor="contact">
                 <div class="flex flex-col md:flex-row items-start gap-10">
-
                     <!-- Logo -->
                     <div class="flex-shrink-0 md:w-auto">
                         <img src="./assets/logo/info.png" alt="Modovip Logo"
                             class="w-48 md:w-56 h-auto mx-auto md:mx-0">
                     </div>
-
                     <!--Info-->
                     <div class="flex-1 text-left">
                         <h3 class="text-3xl font-bold text-gray-900 mb-4 border-b-2 border-bronze inline-block w-full">
@@ -178,7 +171,6 @@
                         <p class="text-gray-700 mb-8">
                             For reservations and more information, please contact us.
                         </p>
-
                         <div class="flex flex-col sm:flex-row sm:flex-wrap items-start gap-6 w-full">
                             <!-- Phone -->
                             <div
@@ -188,7 +180,6 @@
                                     +351 916 858 883
                                 </a>
                             </div>
-
                             <!-- Email -->
                             <div
                                 class="flex items-center gap-3 bg-gray-50 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition">
@@ -198,7 +189,6 @@
                                     modoviplda@gmail.com
                                 </a>
                             </div>
-
                             <!-- Address -->
                             <div
                                 class="flex items-center gap-3 bg-gray-50 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition max-w-full">
@@ -215,7 +205,7 @@
             </div>
         </section>
 
-        <!-- Portuguese Section -->
+        <!-- *************** Portuguese Section *********** -->
         <section id="pt-section" class="mb-16 hidden">
             <div class="text-center mb-12">
                 <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">A Sua Viagem, a Nossa Prioridade</h2>
@@ -325,51 +315,51 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <el-dialog>
-                <dialog id="dialog" aria-labelledby="dialog-title"
-                    class="fixed inset-0 overflow-y-auto bg-transparent backdrop:bg-transparent">
-                    <el-dialog-backdrop
-                        class="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0"></el-dialog-backdrop>
+        <!-- Modal Structure -->
+        <el-dialog>
+            <dialog id="dialog" aria-labelledby="dialog-title"
+                class="fixed inset-0 overflow-y-auto bg-transparent backdrop:bg-transparent">
+                <el-dialog-backdrop
+                    class="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0"></el-dialog-backdrop>
 
-                    <div tabindex="0"
-                        class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                        <el-dialog-panel class="relative transform overflow-auto rounded-lg bg-white text-left shadow-xl transition-all
+                <div tabindex="0"
+                    class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                    <el-dialog-panel class="relative transform overflow-auto rounded-lg bg-white text-left shadow-xl transition-all
                  sm:my-8 sm:w-full sm:max-w-5xl sm:max-h-[90vh] data-closed:sm:translate-y-0 data-closed:sm:scale-95">
 
-                            <!-- Título e botão fechar -->
-                            <div class="px-4 pt-2 sm:flex sm:flex-row-reverse sm:items-start sm:justify-between">
-                                <button type="button" command="close" commandfor="dialog"
-                                    class="inline-flex px-2 py-1 text-md font-semibold text-bronze shadow-xs hover:scale-105 cursor-pointer sm:ml-3 sm:w-auto"
-                                    aria-label="Close">
-                                    X
-                                </button>
+                        <!-- Título e botão fechar -->
+                        <div class="px-4 pt-2 sm:flex sm:flex-row-reverse sm:items-start sm:justify-between">
+                            <button type="button" command="close" commandfor="dialog"
+                                class="inline-flex px-2 py-1 text-md font-semibold text-bronze shadow-xs hover:scale-105 cursor-pointer sm:ml-3 sm:w-auto"
+                                aria-label="Close">
+                                X
+                            </button>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row py-3 px-3 gap-6">
+                            <div class="flex-shrink-0 md:w-[30%] flex items-center">
+                                <img src="" alt="Image" class="w-full h-auto rounded-lg">
                             </div>
 
-                            <div class="flex flex-col md:flex-row py-3 px-3 gap-6">
-                                <div class="flex-shrink-0 md:w-[30%] flex items-center">
-                                    <img src="" alt="Image" class="w-full h-auto rounded-lg">
-                                </div>
+                            <div class="flex-1 flex flex-col justify-center">
+                                <h4 id="dialog-title"
+                                    class="text-2xl font-semibold text-bronze border-b-2 border-bronze inline-block pb-1">
+                                </h4>
 
-                                <div class="flex-1 flex flex-col justify-center">
-                                    <h4 id="dialog-title"
-                                        class="text-2xl font-semibold text-bronze border-b-2 border-bronze inline-block pb-1">
-                                    </h4>
-
-                                    <div class="mt-2 p-2">
-                                        <span id="p1" class="text-gray-700 text-sm md:text-base"></span>
-                                        <span id="p2" class="text-gray-700 font-semibold text-sm md:text-base"></span>
-                                        <p id="p7" class="text-bronze font-semibold text-sm md:text-base"></p>
-                                    </div>
+                                <div class="mt-2 p-2">
+                                    <span id="p1" class="text-gray-700 text-sm md:text-base"></span>
+                                    <span id="p2" class="text-gray-700 font-semibold text-sm md:text-base"></span>
+                                    <p id="p7" class="text-bronze font-semibold text-sm md:text-base"></p>
                                 </div>
                             </div>
-                        </el-dialog-panel>
-                    </div>
-                </dialog>
-            </el-dialog>
+                        </div>
+                    </el-dialog-panel>
+                </div>
+            </dialog>
+        </el-dialog>
 
-
-        </section>
     </main>
 
     <script>
@@ -383,8 +373,15 @@
             const navMenu = document.getElementById('nav-menu');
 
             hamburgerBtn.addEventListener('click', () => {
-                // Alterna a classe 'hidden' no menu de navegação
                 navMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll("#nav-menu .nav-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    if (!navMenu.classList.contains("hidden")) {
+                        navMenu.classList.add("hidden");
+                    }
+                });
             });
 
             const NAV_LABELS = {
@@ -435,13 +432,11 @@
                 }
             }
 
-            // toggle handler (mantém formato único "EN / PT")
             langToggle.addEventListener('click', () => {
                 const next = currentLang === 'en' ? 'pt' : 'en';
                 applyLanguage(next, true);
             });
 
-            // Smooth scroll para meio do ecrã na secção visível
             function scrollToAnchorInVisibleSection(anchorName) {
                 const visibleSection = enSection.classList.contains('hidden') ? ptSection : enSection;
                 const target = visibleSection.querySelector('[data-anchor="' + anchorName + '"]');
@@ -452,7 +447,6 @@
                 }
             }
 
-            // Attach click handlers to nav buttons
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const target = btn.getAttribute('data-target');
@@ -465,7 +459,6 @@
                 });
             });
 
-            // se houver hash na URL (ex: /#fleet), tenta rolar para a secção correcta depois de init
             if (location.hash) {
                 const anchorFromHash = location.hash.replace('#', '');
                 setTimeout(() => {
@@ -473,7 +466,6 @@
                 }, 150);
             }
 
-            // inicializa idioma
             applyLanguage(currentLang, false);
 
             const modalContents = {
@@ -500,6 +492,7 @@
                     text7: "Lisboa · Porto · Sintra · Aveiro",
                     img: "./assets/services/tours.png"
                 },
+
                 // English version
                 airport: {
                     title: "Airport Transfers",
