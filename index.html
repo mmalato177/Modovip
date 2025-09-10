@@ -11,9 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="preload" as="image" href="./assets/services/airport.jpg">
-    <link rel="preload" as="image" href="./assets/services/events.jpg">
-    <link rel="preload" as="image" href="./assets/services/concierge.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
     <script> tailwind.config = {
@@ -25,6 +22,18 @@
                 },
             },
         };
+
+        const preloadImages = [
+            "./assets/services/airport.png",
+            "./assets/services/corporate.png",
+            "./assets/services/tours.png"
+        ];
+
+        preloadImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -62,6 +71,46 @@
             -webkit-user-drag: none;
             user-drag: none;
             pointer-events: none;
+        }
+
+        /* Spinner centralizado na div da imagem */
+        #dialog .img-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 200px;
+            /* ajusta conforme necessário */
+        }
+
+        #dialog .img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: none;
+            /* esconde a imagem até carregar */
+            border-radius: 0.5rem;
+        }
+
+        #dialog .img-wrapper .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #846f42;
+            /* bronze */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -344,8 +393,12 @@
 
                         <div class="flex flex-col md:flex-row py-3 px-3 gap-6">
                             <div class="flex-shrink-0 md:w-[30%] flex items-center">
-                                <img src="" alt="Image" class="w-full h-auto rounded-lg">
+                                <div class="img-wrapper w-full">
+                                    <div class="spinner"></div>
+                                    <img src="" alt="Image">
+                                </div>
                             </div>
+
 
                             <div class="flex-1 flex flex-col justify-center">
                                 <h4 id="dialog-title"
@@ -537,11 +590,22 @@
                     document.getElementById('p2').textContent = modalContents[service].text2 || "";
                     document.getElementById('p7').textContent = modalContents[service].text7 || "";
 
-                    // Atualiza imagem
-                    if (modalContents[service].img) {
-                        const imgEl = document.querySelector('#dialog img');
-                        imgEl.src = modalContents[service].img;
-                    }
+                    const wrapper = document.querySelector('#dialog .img-wrapper');
+                    const imgEl = wrapper.querySelector('img');
+                    const spinner = wrapper.querySelector('.spinner');
+
+                    // Reset
+                    imgEl.style.display = 'none';
+                    spinner.style.display = 'block';
+
+                    // Preload
+                    const tmpImg = new Image();
+                    tmpImg.src = modalContents[service].img;
+                    tmpImg.onload = () => {
+                        imgEl.src = tmpImg.src;
+                        spinner.style.display = 'none';
+                        imgEl.style.display = 'block';
+                    };
 
                     // Lista bullet
                     const contentBox = document.querySelector("#dialog .mt-2.p-2");
@@ -574,6 +638,7 @@
                 modal.close();
             });
         });
+
     </script>
 </body>
 
