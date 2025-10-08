@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modovip, Lda | Premium Passenger Transportation in Portugal</title>
+    <title>Modovip, Lda | Transporte de Passageiros Premium em Portugal</title>
     <meta name="description"
-        content="Modovip offers premium passenger transportation services in Portugal, including airport transfers, private drivers, corporate travel and sightseeing tours. Travel in comfort and style with our electric fleet of Tesla Model Y and Xpeng G9.">
+        content="A Modovip oferece transporte de passageiros premium em Portugal: transfers de aeroporto, motorista privado, viagens corporativas, eventos e passeios turísticos. Conforto, elegância e uma frota elétrica moderna com Tesla Model Y e Xpeng G9.">
     <meta name="keywords"
-        content="Lisbon airport transfer, passenger transportation Portugal, private driver Lisbon, private driver Alcobaça, private driver Fátima, chauffeur service, corporate travel Portugal, sightseeing tours, Tesla transfer, luxury electric car, Modovip, transfer Lisbon, Portugal travel service">
+        content="transporte de passageiros, Alcobaça, transfer Lisboa, transfer aeroporto, motorista privado, viagens corporativas, transporte para eventos, passeios turísticos, carro elétrico de luxo, transfer Tesla, transfer Xpeng, Modovip, serviço de viagens em Portugal, Alcobaça, Fátima, Batalha, Nazaré">
 
     <!-- hreflang links -->
     <link rel="alternate" href="https://modovip.pt/" hreflang="en">
     <link rel="alternate" href="https://modovip.pt/pt/" hreflang="pt-PT">
-    <link rel="canonical" href="https://modovip.pt/">
+    <link rel="canonical" href="https://modovip.pt/pt/">
 
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" href="../favicon.png" type="image/png">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
@@ -34,9 +36,9 @@
         };
 
         const preloadImages = [
-            "./assets/services/airport.png",
-            "./assets/services/corporate.png",
-            "./assets/services/tours.png"
+            "../assets/services/airport.png",
+            "../assets/services/corporate.png",
+            "../assets/services/tours.png"
         ];
 
         preloadImages.forEach(src => {
@@ -124,17 +126,18 @@
         }
     </style>
     <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TransportationService",
   "name": "Modovip",
   "image": "https://modovip.pt/assets/logo/logo_black.png",
-  "@id": "https://modovip.pt/",
-  "url": "https://modovip.pt/",
+  "@id": "https://modovip.pt/pt/",
+  "url": "https://modovip.pt/pt/",
   "telephone": "+351916858883",
   "email": "modoviplda@gmail.com",
   "priceRange": "€€",
-  "description": "Modovip offers premium passenger transportation services in Portugal, including airport transfers, private drivers, corporate travel and sightseeing tours. Travel in comfort and style with our electric fleet of Tesla Model Y and Xpeng G9.",
+  "description": "A Modovip oferece serviços de transporte de passageiros premium em Portugal, incluindo transferes de aeroporto, motoristas privados, viagens corporativas e passeios turísticos. Viaje com conforto e estilo com a nossa frota elétrica de Tesla Model Y e Xpeng G9.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "R. Principal 10-A Gaio, Vimeiro",
@@ -176,7 +179,7 @@
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-2 py-2 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <img src="./assets/logo/logo_black.png" alt="Modovip Logo" class="h-auto w-16">
+                <img src="../assets/logo/logo_black.png" alt="Modovip Logo" class="h-auto w-16">
                 <h1 class="text-3xl font-bold text-gray-900 raleway-h1">MODO<span class="text-bronze">VIP</span></h1>
             </div>
             <button id="hamburger-btn" class="sm:hidden text-gray-700 hover:text-bronze focus:outline-none">
@@ -202,124 +205,17 @@
 
                 <!-- Language toggle na navbar -->
                 <div class="text-lg text-gray-700 mx-2 sm:mx-4 transition-colors duration-300">
-                    <a href="/pt/" class="hover:text-bronze">PT</a>
+                    <span class="text-bronze font-semibold">PT</span>
                     <span class="mx-1">/</span>
-                    <span class="text-bronze font-semibold">EN</span>
+                    <a href="/" class="hover:text-bronze">EN</a>
                 </div>
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-8">
-        <!-- *************** English Section ****************-->
-        <section id="en-section" class="mb-16">
-            <div class="text-center mb-12">
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
-                    Premium Airport Transfers & Private Transportation
-                </h1>
-                <p class="text-xl text-gray-600 max-w-4xl mx-auto">
-                    Discover Modovip, where comfort, elegance, and
-                    reliability meet. We offer a premium transport experience tailored to your needs.
-                </p>
-            </div>
-            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="services">
-                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-bronze pb-2">Our Services</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-                    <button command="show-modal" commandfor="dialog" data-service="airport"
-                        class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
-                        <h4 class="text-2xl font-semibold text-bronze mb-2">Airport Transfers</h4>
-                        <p class="text-gray-700">Punctual and comfortable rides to and from airports.</p>
-                    </button>
-                    <button command="show-modal" commandfor="dialog" data-service="corporate"
-                        class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
-                        <h4 class="text-2xl font-semibold text-bronze mb-2">Corporate Travel</h4>
-                        <p class="text-gray-700">Professional and discreet transport for business meetings and events.
-                        </p>
-                    </button>
-                    <button command="show-modal" commandfor="dialog" data-service="events"
-                        class="p-6 bg-gray-50 rounded-2xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
-                        <h4 class="text-2xl font-semibold text-bronze mb-2">Events & Tours</h4>
-                        <p class="text-gray-700">Elegant and reliable transport for special occasions and sightseeing.
-                        </p>
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="fleet">
-                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-bronze pb-2">Our Fleet</h3>
-                <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-8">
-                    <img src="./assets/fleet/xpeng.png" alt="Xpeng G9"
-                        class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
-                    <div>
-                        <h4 class="text-2xl font-semibold text-gray-900 mb-2">Xpeng G9</h4>
-                        <p class="text-gray-700">Experience the future of electric mobility. With its spacious interior,
-                            advanced technology, and exceptionally smooth ride, the G9 offers unparalleled comfort for
-                            up to four passengers.</p>
-                    </div>
-                </div>
-                <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8">
-                    <img src="./assets/fleet/tesla.png" alt="Tesla Model Y"
-                        class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
-                    <div>
-                        <h4 class="text-2xl font-semibold text-gray-900 mb-2">Tesla Model Y</h4>
-                        <p class="text-gray-700">Enjoy a sporty yet elegant journey. The Model Y is known for its
-                            impressive performance, expansive panoramic roof, and minimalist design, providing a
-                            seamless and exhilarating travel experience.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl" data-anchor="contact">
-                <div class="flex flex-col md:flex-row items-start gap-10">
-                    <!-- Logo -->
-                    <div class="flex-shrink-0 md:w-auto">
-                        <img src="./assets/logo/info.png" alt="Modovip Logo"
-                            class="w-48 md:w-56 h-auto mx-auto md:mx-0">
-                    </div>
-                    <!--Info-->
-                    <div class="flex-1 text-left">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-4 border-b-2 border-bronze inline-block w-full">
-                            Contact Us
-                        </h3>
-                        <p class="text-gray-700 mb-8">
-                            For reservations and more information, please contact us.
-                        </p>
-                        <div class="flex flex-col sm:flex-row sm:flex-wrap items-start gap-6 w-full">
-                            <!-- Phone -->
-                            <div
-                                class="flex items-center gap-3 bg-gray-50 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition">
-                                <img src="./assets/icons/phone.png" alt="Phone Icon" class="h-6 w-6 text-bronze">
-                                <a href="tel:+351916858883" class="text-lg font-semibold text-gray-900 hover:underline">
-                                    +351 916 858 883
-                                </a>
-                            </div>
-                            <!-- Email -->
-                            <div
-                                class="flex items-center gap-3 bg-gray-50 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition">
-                                <img src="./assets/icons/email.png" alt="Email Icon" class="h-6 w-6 text-bronze">
-                                <a href="mailto:modoviplda@gmail.com"
-                                    class="text-lg font-semibold text-gray-900 hover:underline">
-                                    modoviplda@gmail.com
-                                </a>
-                            </div>
-                            <!-- Address -->
-                            <div
-                                class="flex items-center gap-3 bg-gray-50 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition max-w-full">
-                                <img src="./assets/icons/pin.png" alt="Location Icon" class="h-6 w-6 text-bronze">
-                                <a href="https://www.google.com/maps/place/Modovip+lda/..." target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="text-lg font-semibold text-gray-900 break-words hover:underline">
-                                    R. Principal 10-A Gaio, Vimeiro, Alcobaça Portugal
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- *************** Portuguese Section *********** -->
-        <section id="pt-section" class="mb-16 hidden">
+        <section id="pt-section" class="mb-16">
             <div class="text-center mb-12">
                 <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
                     Transfer para Aeroporto e Transporte Privado
@@ -359,7 +255,7 @@
             <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="fleet">
                 <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-bronze pb-2">A Nossa Frota</h3>
                 <div class="flex flex-col md:flex-row items-center md:space-x-8 mb-8">
-                    <img src="./assets/fleet/xpeng.png" alt="Xpeng G9"
+                    <img src="../assets/fleet/xpeng.png" alt="Xpeng G9"
                         class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
                     <div>
                         <h4 class="text-2xl font-semibold text-gray-900 mb-2">Xpeng G9</h4>
@@ -369,7 +265,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-8">
-                    <img src="./assets/fleet/tesla.png" alt="Tesla Model Y"
+                    <img src="../assets/fleet/tesla.png" alt="Tesla Model Y"
                         class="w-full md:w-1/2 rounded-2xl shadow-lg mb-4 md:mb-0">
                     <div>
                         <h4 class="text-2xl font-semibold text-gray-900 mb-2">Tesla Model Y</h4>
@@ -385,7 +281,7 @@
 
                     <!-- Logo -->
                     <div class="flex-shrink-0 md:w-auto">
-                        <img src="./assets/logo/info.png" alt="Modovip Logo"
+                        <img src="../assets/logo/info.png" alt="Modovip Logo"
                             class="w-48 md:w-56 h-auto mx-auto md:mx-0">
                     </div>
 
@@ -403,7 +299,7 @@
                             <!-- Phone -->
                             <div
                                 class="flex items-center gap-3 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition">
-                                <img src="./assets/icons/phone.png" alt="Phone Icon" class="h-6 w-6 text-bronze">
+                                <img src="../assets/icons/phone.png" alt="Phone Icon" class="h-6 w-6 text-bronze">
                                 <a href="tel:+351916858883" class="text-lg font-semibold text-gray-900 hover:underline">
                                     +351 916 858 883
                                 </a>
@@ -412,7 +308,7 @@
                             <!-- Email -->
                             <div
                                 class="flex items-center gap-3 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition">
-                                <img src="./assets/icons/email.png" alt="Email Icon" class="h-6 w-6 text-bronze">
+                                <img src="../assets/icons/email.png" alt="Email Icon" class="h-6 w-6 text-bronze">
                                 <a href="mailto:modoviplda@gmail.com"
                                     class="text-lg font-semibold text-gray-900 hover:underline">
                                     modoviplda@gmail.com
@@ -422,7 +318,7 @@
                             <!-- Address -->
                             <div
                                 class="flex items-center gap-3 border rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition max-w-full">
-                                <img src="./assets/icons/pin.png" alt="Location Icon" class="h-6 w-6 text-bronze">
+                                <img src="../assets/icons/pin.png" alt="Location Icon" class="h-6 w-6 text-bronze">
                                 <a href="https://www.google.com/maps/place/Modovip+lda/..." target="_blank"
                                     rel="noopener noreferrer"
                                     class="text-lg font-semibold text-gray-900 break-words hover:underline">
@@ -486,32 +382,31 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const modalContents = {
-                airport: {
-                    title: "Airport Transfers",
-                    text1: "From Lisbon Airport to any point in the country.",
-                    img: "./assets/services/airport.png",
-                    alt: "Luxury electric airport transfer service in Portugal"
+                aeroporto: {
+                    title: "Transferes para Aeroporto",
+                    text1: "Aeroporto de Lisboa para qualquer ponto do país.",
+                    img: "../assets/services/airport.png",
+                    alt: "Transfer privado de aeroporto em Portugal com carro elétrico de luxo"
                 },
-                corporate: {
-                    title: "Corporate Travel",
-                    text1: "Private trips for short and long distances.",
-                    text2: "Focusing on the ecological footprint, we only work with electric cars.",
-                    img: "./assets/services/corporate.png",
-                    alt: "Premium corporate transportation service with private driver"
-
+                corporativa: {
+                    title: "Viagens Corporativas",
+                    text1: "Viagens particulares de curta e longa distância.",
+                    text2: "Com foco na pegada ecológica apenas trabalhamos com carros elétricos.",
+                    img: "../assets/services/corporate.png",
+                    alt: "Serviço de transporte corporativo premium com motorista particular"
                 },
-                events: {
-                    title: "Events & Tours",
-                    text1: "Tell us where you want to go.... ",
-                    text2: "Make your own route.",
+                eventos: {
+                    title: "Eventos & Passeios",
+                    text1: "Diga-nos onde quer ir.... ",
+                    text2: "Faça o seu próprio percurso.",
                     text3: "Alcobaça - Batalha - Fátima ",
                     text4: "Óbidos - Budha Eden",
                     text5: "Fátima - Grutas - Salinas",
                     text6: "Óbidos - Nazaré - São Martinho do Porto",
                     text7: "Lisboa · Porto · Sintra · Aveiro",
-                    img: "./assets/services/tours.png",
-                    alt: "Premium transportation for events and sightseeing tours in Portugal"
-                },
+                    img: "../assets/services/tours.png",
+                    alt: "Transporte premium para eventos e passeios turísticos em Portugal"
+                }
             };
 
             const modal = document.getElementById('dialog');
@@ -553,7 +448,7 @@
                 const oldList = document.getElementById("bullet-list");
                 if (oldList) oldList.remove();
 
-                if (service === "events") {
+                if (service === "eventos") {
                     const ul = document.createElement("ul");
                     ul.id = "bullet-list";
                     ul.className = "list-disc pl-5 text-gray-700 text-sm md:text-base";
@@ -580,6 +475,7 @@
                 });
             });
         });
+
 
     </script>
 </body>
