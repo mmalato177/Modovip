@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modovip, Lda | Transporte de Passageiros Premium em Portugal</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" href="../favicon.png" type="image/png">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bronze: "#846f42",
+                    },
+                },
+            },
+        };
+
+        const preloadImages = [
+            "../assets/services/airport.png",
+            "../assets/services/corporate.png",
+            "../assets/services/tours.png"
+        ];
+
+        preloadImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #lang-toggle[aria-pressed="true"] .lang-en {
+            font-weight: 700;
+            color: #846f42;
+
+        }
+
+        #lang-toggle[aria-pressed="false"] .lang-pt {
+            font-weight: 700;
+            color: #846f42;
+
+        }
+
+        .raleway-h1 {
+            font-family: 'Raleway', sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200vw;
+            font-style: normal;
+        }
+
+        img {
+            -webkit-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
+
+        /* Spinner centralizado na div da imagem */
+        #dialog .img-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 200px;
+            /* ajusta conforme necessário */
+        }
+
+        #dialog .img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: none;
+            /* esconde a imagem até carregar */
+            border-radius: 0.5rem;
+        }
+
+        #dialog .img-wrapper .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #846f42;
+            /* bronze */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-2 py-2 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="../assets/logo/logo_black.png" alt="Modovip Logo" class="h-auto w-16">
+                <a href="/pt/" class="text-3xl font-bold text-gray-900 raleway-h1">MODO<span class="text-bronze">VIP</span></a>
+            </div>
+            <button id="hamburger-btn" class="sm:hidden text-gray-700 hover:text-bronze focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <nav id="nav-menu"
+                class="hidden sm:flex flex-col sm:flex-row items-center absolute sm:relative top-16 sm:top-auto left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-md sm:shadow-none p-4 sm:p-0"
+                aria-label="Main Navigation">
+                <button
+                    class="nav-btn text-lg text-gray-700 hover:text-bronze mx-2 sm:mx-4 transition-colors duration-300"
+                    data-target="services" aria-label="Services">Serviços</button>
+                <button
+                    class="nav-btn text-lg text-gray-700 hover:text-bronze mx-2 sm:mx-4 transition-colors duration-300"
+                    data-target="fleet" aria-label="Fleet">Frota</button>
+                <button
+                    class="nav-btn text-lg text-gray-700 hover:text-bronze mx-2 sm:mx-4 transition-colors duration-300"
+                    data-target="contact" aria-label="Contact">Contacto</button>
+
+                <!-- Language toggle na navbar -->
+                <div class="text-lg text-gray-700 mx-2 sm:mx-4 transition-colors duration-300">
+                    <span class="text-bronze font-semibold">PT</span>
+                    <span class="mx-1">/</span>
+                    <a href="/" class="hover:text-bronze">EN</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- *************** Portuguese Section *********** -->
+        <section id="pt-section" class="mb-16">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl mb-12" data-anchor="fleet">
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-bronze pb-2">
+                    Política e Privacidade
+                </h3>
+
+                <div class="mb-8 space-y-4">
+                    <p>
+                        A Modovip respeita a privacidade dos visitantes do seu site e compromete-se a proteger as
+                        informações pessoais que eventualmente possam ser recolhidas.
+                    </p>
+
+                    <h4 class="text-xl font-semibold mt-4">1. Recolha de dados pessoais</h4>
+                    <p>
+                        O site <strong>modovip.pt</strong> tem caráter meramente informativo.
+                        Não recolhemos, armazenamos ou tratamos quaisquer dados pessoais dos visitantes.
+                    </p>
+
+                    <h4 class="text-xl font-semibold mt-4">2. Cookies</h4>
+                    <p>
+                        O nosso site apenas utiliza cookies estritamente necessários ao seu funcionamento técnico.
+                        Não utilizamos cookies analíticos, de marketing ou de terceiros.
+                        Ao navegar no site, o utilizador aceita o uso destes cookies técnicos.
+                    </p>
+
+                    <h4 class="text-xl font-semibold mt-4">3. Ligações externas</h4>
+                    <p>
+                        O site pode conter links para sites externos.
+                        A Modovip não se responsabiliza pelo conteúdo ou políticas de privacidade desses sites.
+                    </p>
+
+                    <h4 class="text-xl font-semibold mt-4">4. Contacto</h4>
+                    <p>
+                        Para qualquer questão relacionada com esta política, pode contactar-nos através do email: <a
+                            href="mailto:modoviplda@gmail.com" class="text-bronze underline">modoviplda@gmail.com</a>
+                    </p>
+
+                    <p class="mt-4 font-medium">Última atualização: 15/10/2025</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalContents = {
+                aeroporto: {
+                    title: "Transferes para Aeroporto",
+                    text1: "Aeroporto de Lisboa para qualquer ponto do país.",
+                    img: "../assets/services/airport.png",
+                    alt: "Transfer privado de aeroporto em Portugal com carro elétrico de luxo"
+                },
+                corporativa: {
+                    title: "Viagens Corporativas",
+                    text1: "Viagens particulares de curta e longa distância.",
+                    text2: "Com foco na pegada ecológica apenas trabalhamos com carros elétricos.",
+                    img: "../assets/services/corporate.png",
+                    alt: "Serviço de transporte corporativo premium com motorista particular"
+                },
+                eventos: {
+                    title: "Eventos & Passeios",
+                    text1: "Diga-nos onde quer ir.... ",
+                    text2: "Faça o seu próprio percurso.",
+                    text3: "Alcobaça - Batalha - Fátima ",
+                    text4: "Óbidos - Budha Eden",
+                    text5: "Fátima - Grutas - Salinas",
+                    text6: "Óbidos - Nazaré - São Martinho do Porto",
+                    text7: "Lisboa · Porto · Sintra · Aveiro",
+                    img: "../assets/services/tours.png",
+                    alt: "Transporte premium para eventos e passeios turísticos em Portugal"
+                }
+            };
+
+            const modal = document.getElementById('dialog');
+            const titleEl = document.getElementById('dialog-title');
+            const p1 = document.getElementById('p1');
+            const p2 = document.getElementById('p2');
+            const p7 = document.getElementById('p7');
+            const imgWrapper = modal.querySelector('.img-wrapper');
+            const imgEl = imgWrapper.querySelector('img');
+            const spinner = imgWrapper.querySelector('.spinner');
+            const contentBox = modal.querySelector(".mt-2.p-2");
+
+            document.body.addEventListener('click', (e) => {
+                const btn = e.target.closest('[command="show-modal"]');
+                if (!btn) return;
+
+                const service = btn.getAttribute('data-service');
+                if (!modalContents[service]) return;
+
+                // Atualiza título e textos
+                titleEl.textContent = modalContents[service].title;
+                p1.textContent = modalContents[service].text1 || "";
+                p2.textContent = modalContents[service].text2 || "";
+                p7.textContent = modalContents[service].text7 || "";
+
+                // Imagem com spinner
+                imgEl.style.display = 'none';
+                spinner.style.display = 'block';
+                const tmpImg = new Image();
+                tmpImg.src = modalContents[service].img;
+                tmpImg.onload = () => {
+                    imgEl.src = tmpImg.src;
+                    imgEl.alt = modalContents[service].alt;
+                    spinner.style.display = 'none';
+                    imgEl.style.display = 'block';
+                };
+
+                // Bullet list
+                const oldList = document.getElementById("bullet-list");
+                if (oldList) oldList.remove();
+
+                if (service === "eventos") {
+                    const ul = document.createElement("ul");
+                    ul.id = "bullet-list";
+                    ul.className = "list-disc pl-5 text-gray-700 text-sm md:text-base";
+                    ["text3", "text4", "text5", "text6"].forEach(key => {
+                        if (modalContents[service][key]) {
+                            const li = document.createElement("li");
+                            li.textContent = modalContents[service][key];
+                            ul.appendChild(li);
+                        }
+                    });
+                    contentBox.appendChild(ul);
+                }
+
+                // Abre modal nativo
+                if (typeof modal.showModal === "function") {
+                    modal.showModal();
+                }
+            });
+
+            // Fecha modal
+            modal.querySelectorAll('[command="close"]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    modal.close();
+                });
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
